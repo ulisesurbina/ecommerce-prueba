@@ -25,12 +25,16 @@ const Home = () => {
     return (
         <div className="Home">
             <Row>
-                <Col lg={3}>
+                <Col className="mb-4 p-4" lg={3}>
                     <h3>Categories</h3>
-                    <ListGroup>
+                    <ListGroup className="mb-2 mt-2">
+                    <ListGroup.Item
+                            onClick={() => dispatch(getProductsThunk())}
+                            style={{ background: "#1D4A48", cursor: "pointer", color: "white" }}>Show All</ListGroup.Item>
                         {categories.map((category) => (
                             <ListGroup.Item
-                                key={category}
+                                key={category} 
+                                style={{ background: "#E95420", cursor: "pointer" }}
                                 onClick={() =>
                                     dispatch(filterCategoryThunk(category))
                                 }>
@@ -63,7 +67,7 @@ const Home = () => {
                                             {product.description}
                                         </Card.Text>
                                         <Card.Text>
-                                            Rating: {product.rating?.rate} ★
+                                            Rating: {product.rating?.rate} <i className="fa-regular fa-star"></i>
                                         </Card.Text>
                                         <Card.Text>
                                             Price: ${product.price}

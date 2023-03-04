@@ -16,5 +16,21 @@
   border: 1px solid blue;
   max-width: fit-content;
   padding: 1rem;
-  
+}
+
+.ContainerImg {
+  width: 100%;
+}
+
+.ContainerImgCarrousel {
+  width: 50%;
+  display: flex;
+  display: inline-flex;
+}
+
+.ImgDetail {
+  width: 40%;
+  display: flex;
+  display: inline-flex;
+  margin: 1rem;
 }
