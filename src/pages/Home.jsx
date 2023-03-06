@@ -24,7 +24,7 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <Row>
+            <Row className="m-0">
                 <Col className="mb-4 p-4" lg={3}>
                     <h3>Categories</h3>
                     <ListGroup className="mb-2 mt-2">

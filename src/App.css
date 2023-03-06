@@ -60,6 +60,7 @@
 
 .ButtonShoppingCart {
   align-items: center;
+  overflow-wrap: anywhere;
 }
 
 .ShoppingCartContainer {
