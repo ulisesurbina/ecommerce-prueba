@@ -9,23 +9,21 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-    
     const submit = (data) => {
-        localStorage.setItem("email", "john@gmail.com")
-        localStorage.setItem("password", "m38rmF$")
-            if (String(data.email) === String(localStorage.getItem("email")) || String(data.password) === String(localStorage.getItem("password"))) {
-                navigate("/#/")
-            }             
-            reset({
-                email: "",
-                password: "",
-            });
-            alert("Credentials invalids")
+        data.email === "john@gmail.com" || data.password === "m38rmF$"
+            ? (localStorage.setItem("email", "john@gmail.com"),
+              localStorage.setItem("password", "m38rmF$"),
+              navigate("/#/"))
+            : (alert("Credentials invalids"),
+              reset({
+                  email: "",
+                  password: "",
+              }));
     };
 
     return (
-        <div>
-            <Form onSubmit={handleSubmit(submit)}>
+        <div className="Login">
+            <Form onSubmit={handleSubmit(submit)} className="LoginContainer">
                 <Form.Group className="m-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
@@ -34,6 +32,8 @@ const Login = () => {
                         {...register("email")}
                     />
                     <Form.Text className="text-muted">
+                        <br />
+                        <p>Data for login:</p>
                         <p>Email: "john@gmail.com"</p>
                         <p>Password: "m38rmF"</p>
                     </Form.Text>

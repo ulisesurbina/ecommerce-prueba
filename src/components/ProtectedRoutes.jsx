@@ -2,11 +2,11 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 const ProtectedRoutes = () => {
 
-    const key = localStorage.getItem("email", "password")
+    const data = localStorage.getItem("email", "password")
 
 		// Aquí va la condición. Puede ser una condición de cualquier tipo. Lo que 
 		// Importa es que valide si el usuario está loggeado o no
-    if(key !== ""){
+    if(data !== ""){
         return <Outlet />
     } else { 
         return <Navigate to='/login' />

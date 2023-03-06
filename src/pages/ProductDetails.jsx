@@ -28,7 +28,7 @@ const ProductDetails = () => {
             quantity: counter,
         };
         dispatch(addShoppingCartThunk(quantity));
-        console.log(quantity);
+        // console.log(quantity);
     };
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const ProductDetails = () => {
         dispatch(getProductsThunk());
     }, []);
 
-    console.log(suggestedProducts);
+    // console.log(suggestedProducts);
 
     return (
         <div>

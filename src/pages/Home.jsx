@@ -28,13 +28,22 @@ const Home = () => {
                 <Col className="mb-4 p-4" lg={3}>
                     <h3>Categories</h3>
                     <ListGroup className="mb-2 mt-2">
-                    <ListGroup.Item
+                        <ListGroup.Item
                             onClick={() => dispatch(getProductsThunk())}
-                            style={{ background: "#1D4A48", cursor: "pointer", color: "white" }}>Show All</ListGroup.Item>
+                            style={{
+                                background: "#1D4A48",
+                                cursor: "pointer",
+                                color: "white",
+                            }}>
+                            Show All
+                        </ListGroup.Item>
                         {categories.map((category) => (
                             <ListGroup.Item
-                                key={category} 
-                                style={{ background: "#E95420", cursor: "pointer" }}
+                                key={category}
+                                style={{
+                                    background: "#E95420",
+                                    cursor: "pointer",
+                                }}
                                 onClick={() =>
                                     dispatch(filterCategoryThunk(category))
                                 }>
@@ -51,7 +60,7 @@ const Home = () => {
                                 onClick={() =>
                                     navigate(`/productDetails/${product.id}`)
                                 }
-                                className="ProductCard">
+                                className="ProductCard mt-3">
                                 <Card style={{ width: "18rem" }}>
                                     <Card.Img
                                         variant="top"
@@ -59,15 +68,15 @@ const Home = () => {
                                         alt={`Image of ${product.title}`}
                                     />
                                     <Card.Body>
-                                        <Card.Title>{product.title}</Card.Title>
+                                        <Card.Title className="TitleHome">
+                                            {product.title}
+                                        </Card.Title>
                                         <Card.Text>
                                             Category: {product.category}
                                         </Card.Text>
                                         <Card.Text>
-                                            {product.description}
-                                        </Card.Text>
-                                        <Card.Text>
-                                            Rating: {product.rating?.rate} <i className="fa-regular fa-star"></i>
+                                            Rating: {product.rating?.rate}{" "}
+                                            <i className="fa-regular fa-star"></i>
                                         </Card.Text>
                                         <Card.Text>
                                             Price: ${product.price}

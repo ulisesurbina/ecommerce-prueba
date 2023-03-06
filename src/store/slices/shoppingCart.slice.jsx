@@ -14,18 +14,10 @@ export const shoppingCartSlice = createSlice({
     }
 })
 
-export const getShoppingCartThunk = () => (dispatch) => {
-    dispatch(setIsLoading(true));
-    return axios.get(`https://fakestoreapi.com/cart?userId${user.id}`, getConfig())
-        .then((res) => dispatch(setShoppingCart(res.data)))
-        .finally(() => dispatch(setIsLoading(false)))
-        .catch(error => console.log(error))
-}
-
 export const addShoppingCartThunk = shoppingCart => (dispatch) => {
     dispatch(setIsLoading(true));
     return axios.post("https://fakestoreapi.com/carts", shoppingCart, getConfig())
-        .then(() => dispatch(getShoppingCartThunk()))
+        .then((res) => dispatch(setShoppingCart(res.data)))
         .finally(() => dispatch(setIsLoading(false)))
         .catch(error => console.log(error))
 }

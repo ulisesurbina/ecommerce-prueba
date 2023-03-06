@@ -13,9 +13,18 @@
 }
 
 .ProductCard {
-  border: 1px solid blue;
+  border: 2px dashed blue;
+  border-radius: 10px 50px;
   max-width: fit-content;
   padding: 1rem;
+}
+
+.ProductCard img {
+  height: 410px;
+}
+
+.TitleHome {
+  height: 144px;
 }
 
 .ContainerImg {
@@ -33,4 +42,36 @@
   display: flex;
   display: inline-flex;
   margin: 1rem;
+}
+
+.Login {
+  background-color: rgb(225, 237, 186);
+}
+
+.LoginContainer {
+  width: 50%;
+  display: inline-flex;
+  justify-content:center;
+  flex-direction: column;
+  margin: 2rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px 50px;
+}
+
+.ButtonShoppingCart {
+  align-items: center;
+}
+
+.ShoppingCartContainer {
+  border: 1px solid blue;
+  border-radius: 10px 50px;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.Purchases {
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
